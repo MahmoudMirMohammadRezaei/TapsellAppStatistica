@@ -18,7 +18,6 @@ class AppStatisticsService(val appStatisticsRepository: AppStatisticsRepository,
                            val redisTemplate: RedisTemplate<String, String>,
                            val objectMapper: ObjectMapper) {
 
-//    @Cacheable(value = ["AppStatistics"], key = "stats-#startDate-#endDate-#type")
     fun getStats(type: Int, startDate: Date, endDate: Date): AppStatisticsListResponse {
 
         var ListComponies = appStatisticsRepository.findByTypeAndReportTimeBetween(type, startDate, endDate)
